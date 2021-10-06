@@ -11,3 +11,18 @@
   font-size: 1.2rem;
   font-family: 'Noto Sans KR', sans-serif;
 }
+
+
+.list
+{
+  margin-top: 30px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn
+{
+  width:100px;
+  margin-left: 20px;
+}
