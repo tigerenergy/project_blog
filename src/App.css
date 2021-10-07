@@ -26,3 +26,12 @@
   width:100px;
   margin-left: 20px;
 }
+
+.modal
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #eee;
+}

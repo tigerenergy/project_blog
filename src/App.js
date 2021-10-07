@@ -5,7 +5,7 @@ import './App.css'
 function App()
 {
 
-  let [title, titleChange] = useState(['평양 냉면 추천' , '소고기 맛집', '돼지고기 맛집',])
+  let [title, titleChange] = useState(['평양 냉면 추천' , '소고기 맛집', '돼지고기 맛집'])
   let [good, goodChange] = useState(0)
   
 
@@ -39,8 +39,22 @@ function App()
       <p>10월 8일 발행</p>
       <hr/>
     </div>
+    <Modal/>
   </div>
   )
 }
+
+const Modal = () =>
+{
+  return(
+    <div className="modal">
+    <h2>제목</h2>
+    <p>날짜</p>
+    <p>상세내용</p>
+  </div>  
+  )
+}
+
+
 
 export default App;
