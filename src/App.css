@@ -21,10 +21,16 @@
   padding-right: 20px;
 }
 
-.btn
+.buttons
 {
-  width:100px;
-  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons button
+{
+  width:20vw;
 }
 
 .modal
