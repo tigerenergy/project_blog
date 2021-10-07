@@ -5,42 +5,59 @@ import './App.css'
 function App()
 {
 
-  let [title, titleChange] = useState(['평양 냉면 추천' , '소고기 맛집', '돼지고기 맛집'])
-  let [good, goodChange] = useState(0)
+  let [titleSet, titleChange] = useState(['평양 냉면 추천' , '소고기 맛집', '돼지고기 맛집'])
+  let [goodSet, goodChange] = useState([0,0,0])
+  let [inputSet , inputChange] = useState('')
   let [modal, modalChange] = useState(false)
 
-  const changeTitle = () =>
+
+
+  const changeInput = (i) =>
   {
-    const newArray = [...title]
-    newArray[0] = '피자 치킨 맛집'
-    titleChange(newArray)
+    const newArray = [...goodSet]
+    newArray[i]++
+    goodChange(newArray)
   }
 
+ {/* 반복문 함수를 만들어 사용하는 경우 */}
+
+  const htmlTitle = () =>
+  {
+    const Array = [];
+    for (let i = 0; i < 3; i++) 
+    {
+      Array.push(<div>안녕</div>)
+    }
+    return Array
+  }
 
   return(
     <div className="App">
-      
       <div className="black-nav">
       <div>개발 블로그</div>
     </div>
-    <div className="list">
-      <h3>{ title[0] } <span onClick={()=> { goodChange(good + 1) }} >👍</span> { good } </h3>
-      <p>10월 8일 발행</p>
-      <hr/>
-    </div>
-    <div className="list">
-      <h3>{ title[1] }</h3>
-      <p>10월 8일 발행</p>
-      <hr/>
-    </div>
-    <div className="list">
-      <h3>{ title[2] }</h3>
-      <p>10월 8일 발행</p>
-      <hr/>
-    </div>
+
+    {/* 반복문  map을 사용할 것 */}
+
+    {
+      titleSet.map((value, Point)=>
+      {
+        return(
+          <div className="list" key='{Point}'>
+          <h3>{ value } <span onClick={()=> {changeInput(Point) }} >👍</span> { goodSet[Point] } </h3>
+          <p>10월 8일 발행</p>
+            { htmlTitle() }
+          <hr/>
+        </div>
+        )  
+      })
+    }
+
     <div className="buttons">
     <button onClick={()=>{modalChange(!modal)}}>버튼</button>
     </div>
+
+    {/* 조건문  삼항연산자로 사용할 것 */}
     {
       modal === true 
       ? <Modal></Modal> 
