@@ -9,7 +9,7 @@ function App()
   let [goodSet, goodChange] = useState([0,0,0])
   let [inputSet , inputChange] = useState('')
   let [modal, modalChange] = useState(false)
-
+  let [clickTitle, clickTitleChange] = useState(0)
 
 
   const changeInput = (i) =>
@@ -44,7 +44,8 @@ function App()
       {
         return(
           <div className="list" key='{Point}'>
-          <h3>{ value } <span onClick={()=> {changeInput(Point) }} >👍</span> { goodSet[Point] } </h3>
+          <h3 onClick={()=>{clickTitleChange(Point)}}>{ value } </h3>
+          <span onClick={()=> {changeInput(Point) }} >👍</span> { goodSet[Point] } 
           <p>10월 8일 발행</p>
             { htmlTitle() }
           <hr/>
@@ -54,13 +55,13 @@ function App()
     }
 
     <div className="buttons">
-    <button onClick={()=>{modalChange(!modal)}}>버튼</button>
+    <button onClick={()=>{modalChange(!modal)}}>열고닫기</button>
     </div>
 
     {/* 조건문  삼항연산자로 사용할 것 */}
     {
       modal === true 
-      ? <Modal titleSet={titleSet}></Modal> 
+      ? <Modal titleSet={titleSet} clickTitle ={clickTitle}></Modal> 
       : null
     }
   </div>
@@ -71,7 +72,7 @@ const Modal = (props) =>
 {
   return(
     <div className="modal">
-    <h2>{props.titleSet[0]}</h2>
+    <h2>{props.titleSet[props.clickTitle]}</h2>
     <p>날짜</p>
     <p>상세내용</p>
   </div>  
