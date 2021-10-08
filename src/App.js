@@ -60,18 +60,18 @@ function App()
     {/* 조건문  삼항연산자로 사용할 것 */}
     {
       modal === true 
-      ? <Modal></Modal> 
+      ? <Modal titleSet={titleSet}></Modal> 
       : null
     }
   </div>
   )
 }
 
-const Modal = () =>
+const Modal = (props) =>
 {
   return(
     <div className="modal">
-    <h2>제목</h2>
+    <h2>{props.titleSet[0]}</h2>
     <p>날짜</p>
     <p>상세내용</p>
   </div>  
