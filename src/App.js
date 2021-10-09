@@ -74,6 +74,7 @@ const Modal = (props) =>
     <div className="modal">
     <h2>{props.titleSet[props.clickTitle]}</h2>
     <p>날짜</p>
+    <p>제목</p>
     <p>상세내용</p>
   </div>  
   )

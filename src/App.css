@@ -28,7 +28,8 @@ body
 }
 
 .buttons
-{
+{ 
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +37,7 @@ body
 
 .buttons button
 {
-  width:20vw;
+  max-width:20vw;
 }
 
 .modal
