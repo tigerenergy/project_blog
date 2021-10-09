@@ -34,7 +34,7 @@ function App()
   return(
     <div className="App">
       <div className="black-nav">
-      <div>개발 블로그</div>
+      <div>개발 blog</div>
     </div>
 
     {/* 반복문  map을 사용할 것 */}
