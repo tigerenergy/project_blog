@@ -48,3 +48,15 @@ body
   align-items: center;
   background: #eee;
 }
+
+.inputBox
+{
+  display: flex;
+  justify-content:center;
+  max-width: 100vw;
+}
+
+
+input {
+  text-align: center;
+}
